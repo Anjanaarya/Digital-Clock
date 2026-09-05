@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Digital Clock — Alarm</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="wrap">
+  <div class="clock-card">
+
+    <div class="tabs">
+      <button class="tab-btn active" id="tabClockBtn" data-tab="clock">Clock</button>
+      <button class="tab-btn" id="tabStopwatchBtn" data-tab="stopwatch">Stopwatch</button>
+    </div>
+
+    <div class="tab-panel active" id="clockPanel">
+      <div class="date" id="date"></div>
+      <div class="time" id="time">--:--:--<span class="meridiem" id="meridiem"></span></div>
+      <button class="mode-toggle" id="modeToggle">Switch to 24h</button>
+
+      <div class="section-title">Alarms</div>
+      <div class="add-alarm">
+        <input type="time" id="alarmInput">
+        <button id="addAlarmBtn">Add</button>
+      </div>
+      <ul class="alarm-list" id="alarmList"></ul>
+    </div>
+
+    <div class="tab-panel" id="stopwatchPanel">
+      <div class="time stopwatch-time" id="stopwatchTime">00:00<span class="meridiem" id="stopwatchMs">.00</span></div>
+
+      <div class="stopwatch-controls">
+        <button class="sw-btn sw-start" id="swStartBtn">Start</button>
+        <button class="sw-btn sw-lap" id="swLapBtn" disabled>Lap</button>
+        <button class="sw-btn sw-reset" id="swResetBtn" disabled>Reset</button>
+      </div>
+
+      <div class="section-title">Laps</div>
+      <ul class="alarm-list" id="lapList">
+        <div class="empty">No laps yet</div>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<div class="overlay" id="overlay">
+  <div class="ring-card">
+    <div class="ring-time" id="ringTime">00:00</div>
+    <div class="ring-label">Alarm</div>
+    <div class="ring-buttons">
+      <button class="snooze-btn" id="snoozeBtn">Snooze 5m</button>
+      <button class="dismiss-btn" id="dismissBtn">Dismiss</button>
+    </div>
+  </div>
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
